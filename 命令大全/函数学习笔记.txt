@@ -1,0 +1,13 @@
+18.函数
+def MyFirstFunction(name="叶方",come="来了"):    #定义参数
+	'打印两个字符串,name参数在前，come参数在后\n...'    #函数文档
+	print(name + come)
+
+MyFirstFunction.__doc__
+help(MyFirstFunction)
+
+打印函数的说明文档。help 会将\n 转换成换行，更美观。
+
+默认参数：定义的时候赋值，使用时可以省略
+关键字参数：使用的时候赋值
+收集参数:可变参数，前面加*号，可以输入多个参数。输入成一个元组。使用收集参数，必须使用关键字参数，才能输入另外一个参数。

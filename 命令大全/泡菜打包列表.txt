@@ -1,0 +1,11 @@
+import pickle
+my_list = ['小甲鱼','改变世界','编程',123,3.14]
+pickle_file = open('my_list.pkl',"wb")
+pickle.dump(my_list,pickle_file)
+pickle_file.close()
+
+
+
+pickle_file = open('my_list.pkl',"rb")
+my_list2 = pickle.load(pickle_file)
+print(my_list2)

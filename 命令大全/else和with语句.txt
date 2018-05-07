@@ -1,0 +1,40 @@
+# 示例：
+def showMaxFactor(num):
+	count = num // 2
+	while count > 1:
+		if num % count == 0:
+			print('%d最大的约数是%d' % (num,count))
+			break
+		count -= 1
+	else:
+		print('%d是素数！' % num)
+
+num = int(input('请输入一个数：'))
+showmaxfactur(num)
+
+
+try:
+	print(int('123'))
+except ValueError as reason:
+	print('出错啦：' + str(reason))
+else:
+	print('没有任何异常！')
+
+
+try:
+	f = open('data.txt','w')    
+	for each_line in f:
+		print(each_line)
+except OSError as reason:
+	print('出错啦：' + str(reason))
+finally:
+	f.close()
+
+
+try:
+	with open('data.txt','w') as f:   # with 会在适当的时候，自动关闭掉文件。
+		for each_line in f:
+			print(each_line)
+except OSError as reason:
+	print('出错啦：' + str(reason))
+

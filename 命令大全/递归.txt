@@ -1,0 +1,74 @@
+递归:在调用一个函数的过程中，直接或间接地调用了函数本身这个就叫递归
+
+#直接调用自己：
+def func():
+    print('from func')
+    func()
+
+func()
+
+
+
+#间接调用自己
+def foo():
+    print('from foo')
+    bar()
+
+def bar():
+    print('from bar')
+    foo()
+
+foo()
+
+
+#递归的实现：
+def age(n):
+    if n == 1:
+        return 18
+    return age(n-1)+2
+
+print(age(5))
+
+# age(5)=age(4)+2 第一次进入
+# age(4)=age(3)+2 第二次进入
+# age(3)=age(2)+2 第三次进入
+# age(2)=age(1)+2 第四次进入
+# age(1)=18 第五次进入，最后判断终止条件
+
+# age(n)=age(n-1)+2 #n>1  递归终止条件
+# age(1)=18 #n=1          等于终止条件
+
+
+
+
+
+
+
+# 实例
+l =[1, 2, [3, [4, 5, 6, [7, 8, [9, 10, [11, 12, 13, [14, 15,[16,[17,]],19]]]]]]]
+
+def search(l):
+    for item in l:
+        if type(item) is list:
+            search(item)
+        else:
+            print(item)
+
+search(l)
+
+
+
+
+
+
+
+
+汉诺塔的递归实现：
+def move(n, a, buffer, c):
+    if(n == 1):
+        print(a,"->",c)
+        return
+    move(n-1, a, c, buffer)
+    move(1, a, buffer, c)
+    move(n-1, buffer, a, c)
+move(3, "a", "b", "c")
